@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title><%= title %></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="./styles/main.css" />
+		<script src="main.js"></script>
+	</head>
+	<body>
+        <%- include('partials/header'); %>
+        
+		<form method="post">
+            <p><%= err %></p>
+
+			<% for (let i = 1; i <= 6; i++) { %>
+
+			<div>
+				<label for="player<%= i %>Name">Player <%=i%> name: </label>
+				<input type="text" id="player<%= i %>Name" name="player<%= i %>Name" />
+                <label for="player<%= i %>Points">Player <%=i%> Points: </label>
+                <input type="text" id="player<%= i %>Points" name="player<%= i %>Points" />
+			</div>
+
+			<% } %>
+
+			<div>
+				<input type="submit" value="Add Game" formaction="/games/add" />
+			</div>
+		</form>
+	</body>
+</html>

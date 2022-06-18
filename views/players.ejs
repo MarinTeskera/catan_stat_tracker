@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title><%= title %></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" href="./styles/main.css" />
+    <script src='main.js'></script>
+</head>
+<body>
+
+    <%- include('partials/header'); %>
+
+    <% if (players !== undefined) { %>
+
+        <% for (player of players)  { %>
+
+            <section style="background-color: <%= player.color%>;padding: 10px;border: 3px solid; margin:5px">
+                <h2>Player name: <%= player.name %></h2>
+                <h3>Average points per game: <%= player.pointavg %></h3>
+                <h3>Average placement per game: <%= player.placeavg %></h3>
+                <h3>Games played: <%= player.gamesplayed %></h3>
+            </section>
+
+        <% } %>
+
+    <% } %>
+
+    <a href="/players/add">Add player</a>
+    
+</body>
+</html>
