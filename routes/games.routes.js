@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../db')
+const db = require('../db');
 
 router.get('/', async function (req, res) {
     res.render('games', {
         title: 'Games',
-        games: (await db.query('SELECT * FROM player NATURAL JOIN game  WHERE playerid = winnerid')).rows,
+        games: (await db.query('SELECT * FROM player NATURAL JOIN game WHERE playerid = winnerid')).rows,
     });
 });
 
@@ -76,9 +76,10 @@ router.post('/add', async function (req, res) {
                         VALUES(${gp.player.playerid}, ${gameid}, ${gp.points}, ${gp.place})`);
     }
 
-    console.log(game_players)
+    console.log(game_players);
 
-    res.redirect('/players');
+    res.redirect('/leaderboard');
+
 });
 
 module.exports = router;

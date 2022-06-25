@@ -1,0 +1,67 @@
+
+
+
+
+html,body{ 
+    margin: auto 0;
+    
+}
+
+.img-wrap1{
+    color: rgb(238, 232, 214);
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    min-height: 100vh;
+    max-height: fit-content;
+    background:radial-gradient(195.3% 240.56% at 50% -91.22%, rgba(14, 16, 21, 0) 0%, rgb(14, 16, 21) 75.62%),url('../img/catan.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.img-wrap2{
+    color: rgb(238, 232, 214);
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    min-height: 100vh;
+    max-height: fit-content;
+    background:#0e1015 radial-gradient(195.3% 240.56% at 50% -95.22%, rgba(14, 16, 21, 0) 0%, rgb(14, 16, 21) 75.62%); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.img-wrap2 .gameHistory .row{
+    background-color: rgb(238, 232, 214);;   
+    border-radius: 3vh;
+}
+.img-wrap2 .gameHistory{
+    border-radius: 3vh;
+}
+.img-wrap2 .playerForm{
+    border-radius: 3vh;
+}
+
+.navbar-nav a{
+    text-decoration: none;
+    font-size: 3.2vh;
+    color: rgb(238, 232, 214);
+
+}
+a.addgame{
+    text-decoration: none;
+    font-size: 3.2vh;
+    color: rgb(238, 232, 214);
+}
+ 
+a:hover {
+    color: #007bff;
+}
+  
+header .col-12{
+    height: 80vh;
+}
+#naslov h1{
+    /* background: rgba(233, 234, 238, 0.377); */
+    font-size: 12vh;
+    /* border-radius: 6vh; */
+}

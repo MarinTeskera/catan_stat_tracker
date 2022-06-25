@@ -5,29 +5,63 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<title><%= title %></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" type="text/css" href="./styles/main.css" />
-		<script src="main.js"></script>
+		<link rel="stylesheet" href="../css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/styles/style.css" /> 
+		<!-- <script src="main.js"></script> -->
+		
 	</head>
 	<body>
-        <%- include('partials/header'); %>
+		<div class="container-fluid img-wrap2">
+			<div class="container-fluid bg-dark" id="navigacija">
+				<div class="row">
+					<div class="col-12 d-flex justify-content-center">
+						<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+								<div class="navbar-nav">
+									<a class="m-2 px-2" href="/">Home</a>
+                                	<a class="m-2 px-2" href="/player">Players</a>
+                                	<a class="m-2 px-2" href="/games">Games</a>
+                                	<a class="m-2 px-2" href="/leaderboard">Leaderboard</a>
+								</div>
+							</div>
+						</nav>
+					</div>
+				</div>  
+			</div>
+			<div class="container">
+				<div class="row justify-content-center align-items-center mt-5">
+					<div class="col-10 py-3 bg-dark playerForm">
+						<form method="post">
+							<p><%= err %></p>
+				
+							<% for (let i = 1; i <= 6; i++) { %>
+								<div class="row">
+									<div class="col d-flex justify-content-center mx-2 my-1">
+										<label for="player<%= i %>Name">Player <%=i%> name: </label>
+										<input type="text" id="player<%= i %>Name" name="player<%= i %>Name" />
+										<label for="player<%= i %>Points">Player <%=i%> Points: </label>
+										<input type="text" id="player<%= i %>Points" name="player<%= i %>Points" />
+									</div>
+								</div>
+							<div>	
+				
+							<% } %>	
+						</form>
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="col d-flex justify-content-center mx-2 my-1">
+						<input type="submit" class="m-2 btn btn-primary" value="Add Game" formaction="/games/add" />
+					</div>			
+				</div>
+	
+			</div>
+			
+		</div>
         
-		<form method="post">
-            <p><%= err %></p>
-
-			<% for (let i = 1; i <= 6; i++) { %>
-
-			<div>
-				<label for="player<%= i %>Name">Player <%=i%> name: </label>
-				<input type="text" id="player<%= i %>Name" name="player<%= i %>Name" />
-                <label for="player<%= i %>Points">Player <%=i%> Points: </label>
-                <input type="text" id="player<%= i %>Points" name="player<%= i %>Points" />
-			</div>
-
-			<% } %>
-
-			<div>
-				<input type="submit" value="Add Game" formaction="/games/add" />
-			</div>
-		</form>
 	</body>
 </html>
