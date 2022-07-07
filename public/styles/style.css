@@ -20,7 +20,7 @@ html,body{
 }
 
 .img-wrap2{
-    color: rgb(238, 232, 214);
+    color: black/* rgb(238, 232, 214) */;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
@@ -31,7 +31,7 @@ html,body{
     background-size: cover;
 }
 .img-wrap2 .gameHistory .row{
-    background-color: rgb(238, 232, 214);;   
+    background-color: rgb(238, 232, 214);   
     border-radius: 3vh;
 }
 .img-wrap2 .gameHistory{
