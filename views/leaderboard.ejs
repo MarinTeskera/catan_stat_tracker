@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title><%= title %></title>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title><%= title %></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-		<link rel="stylesheet" href="css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="/styles/style.css" />
-		<!-- <script src='main.js'></script> -->
-	</head>
-	<body>
-		<div class="container-fluid img-wrap2">
-			<%- include('partials/header'); %> <% if (players !== undefined) { %> <%
-			for (player of players) { %>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/styles/style.css" /> 
+    <!-- <script src='main.js'></script> -->
+</head>
+<body>
+    <div class="container-fluid img-wrap2">
+        <%- include('partials/header'); %>
+    
+        <% if (players !== undefined) { %>
 
-			<div
-				class="container-fluid"
-				style="background-color: <%= player.color%>; padding: 10px"
-			>
-				<h2>Player name: <%= player.name %></h2>
-				<h3>Average points per game: <%= player.pointavg %></h3>
-				<h3>Average placement per game: <%= player.placeavg %></h3>
-				<h3>Games played: <%= player.gamesplayed %></h3>
-			</div>
-			<% } %> <% } %>
-		</div>
-	</body>
+            <div class="container px-5 pb-4 pt-4 bg-dark gameHistory" style="margin-top: 10px;">
+    
+            <% for (player of players)  { %>
+                
+                <div class="container-fluid row mb-3 p-5" style="background-color: <%= player.color%>;">
+                    <h2>Player name: <%= player.name %></h2>
+                    <h3>Average points per game: <%= parseFloat(player.pointavg) %></h3>
+                    <h3>Average placement per game: <%= parseFloat(player.placeavg) %></h3>
+                    <h3>Games played: <%= player.gamesplayed %></h3>
+                </div>
+            <% } %>
+
+            </div>
+    
+        <% } %>
+    </div>  
+</body>
 </html>
