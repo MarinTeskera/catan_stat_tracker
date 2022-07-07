@@ -1,7 +1,4 @@
 
-
-
-
 html,body{ 
     margin: auto 0;
     
@@ -30,11 +27,19 @@ html,body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+
 .img-wrap2 .gameHistory .row{
     background-color: rgb(238, 232, 214);   
     border-radius: 3vh;
 }
+
+.img-wrap2 .gameHistory .addGame .row{
+    background-color: initial;   
+}
+
 .img-wrap2 .gameHistory{
+    margin-top: 2.5vh;
     border-radius: 3vh;
 }
 .img-wrap2 .playerForm{
@@ -43,6 +48,7 @@ html,body{
 }
 
 .navbar-nav a{
+    padding: 1.5vh;
     text-decoration: none;
     font-size: 3.2vh;
     color: rgb(238, 232, 214);
@@ -55,7 +61,8 @@ a.addgame{
 }
  
 a:hover {
-    color: #007bff;
+    background-color: rgb(238, 232, 214);
+    color: black;
 }
   
 header .col-12{
@@ -66,3 +73,28 @@ header .col-12{
     font-size: 12vh;
     /* border-radius: 6vh; */
 }
+
+.collapse{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1vh;
+
+    
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .collapse{
+        display: initial;
+        margin-top: 0vh;
+    }
+
+    .navbar{
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
