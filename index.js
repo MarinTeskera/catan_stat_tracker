@@ -6,7 +6,7 @@ const bp = require('body-parser')
 
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
+app.use(express.static(__dirname + '/node_modules'));
 app.use(express.static(__dirname + '/public'));
 
 

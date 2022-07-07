@@ -5,7 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title><%= title %></title>
     <meta name='viewport' content='width=device-width, initial-scale=1'> 
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/styles/style.css" /> 
     <!-- <script src='main.js'></script> -->
     
@@ -13,17 +13,21 @@
 <body>
     <div class="container-fluid img-wrap2">
         <%- include('partials/header'); %>
-        <div class="container-fluid py-3">
-            <div class="row">
-                <div class="col d-flex justify-content-center">
-                    <a href="/games/add" class="m-2 btn btn-primary" >Add game</a>
-                </div>
-            </div>
-
         </div>
+
+        
         
         
         <div class="container px-5 pb-4 pt-4 bg-dark gameHistory">
+
+            <div class="container-fluid py-3 addGame">
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <a href="/games/add" class="m-2 btn btn-primary" >Add game</a>
+                    </div>
+                </div>
+            </div>
+
             <% if (games !== undefined) { %>
     
                 <% for (game of games)  { %>
@@ -43,6 +47,10 @@
         </div>
         
     </div>
-    
+
+    <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="jquery/dist/jquery.min.js"></script>
+
+   
 </body>
 </html>
