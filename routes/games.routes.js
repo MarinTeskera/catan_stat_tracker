@@ -5,7 +5,7 @@ const db = require('../db');
 router.get('/', async function (req, res) {
     res.render('games', {
         title: 'Games',
-        games: (await db.query('SELECT * FROM player NATURAL JOIN game WHERE playerid = winnerid')).rows,
+        games: (await db.query("SELECT name, EXTRACT(day FROM date) || '.' || EXTRACT(month FROM date) || '.' || EXTRACT(year FROM date) AS date FROM player NATURAL JOIN game WHERE playerid = winnerid")).rows,
     });
 });
 
